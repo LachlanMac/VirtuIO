@@ -1,0 +1,5 @@
+ip=192.168.0.177
+serverport=8888
+clientport=8889
+size=600
+version=Alpha 0.80
