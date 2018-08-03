@@ -3,9 +3,13 @@ package com.frick.virtuio.main.gui.io;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 
+import com.frick.virtuio.main.utilities.AnalogChannelInfo;
+import com.frick.virtuio.main.utilities.UnityActions;
+
 public class VAnalogChannel extends VIOChannel {
 	TYPE type;
 	int value, height, width;
+	AnalogChannelInfo info;
 
 	public VAnalogChannel(int channelID, VIOBoard board, int value, TYPE type) {
 		super(channelID, board);
@@ -14,6 +18,8 @@ public class VAnalogChannel extends VIOChannel {
 
 		this.height = (int) (board.getCenterPanel().getPreferredSize().getHeight() / 3) - 1;
 		this.width = (int) board.getCenterPanel().getPreferredSize().getWidth() / 32 - 5;
+
+		info = UnityActions.getAnalogChannelInfo(board.getBoardID(), channelID);
 
 		this.setLayout(new BorderLayout());
 		this.setPreferredSize(new Dimension(width, height));
@@ -64,6 +70,10 @@ public class VAnalogChannel extends VIOChannel {
 			return 0;
 		}
 
+	}
+
+	public AnalogChannelInfo getChannelInfo() {
+		return info;
 	}
 
 }

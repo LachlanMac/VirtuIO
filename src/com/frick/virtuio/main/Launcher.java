@@ -20,6 +20,7 @@ import com.frick.virtuio.main.utilities.UnityActions;
  */
 public class Launcher {
 
+	public static final String PRODUCT = "compressor";
 	public static final String resPath = "/home/frick/VirtuIO/res";
 	public static InetAddress hostIP;
 	public static boolean LOCAL = false;
